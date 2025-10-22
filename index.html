@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anuj Tiwari | Web Developer</title>
     
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Personal portfolio of Anuj Tiwari, a passionate web developer specializing in React, Node.js, and modern web technologies.">
+    <meta name="keywords" content="Anuj Tiwari, Web Developer, Portfolio, React, Node.js, Next.js, JavaScript, TypeScript, MongoDB, Full-Stack Developer">
+    
+    <!-- Favicon (Placeholder 'A') -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2338BDF8%22>A</text></svg>">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +20,7 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- CORRECT CSS LINK FOR VERCEL -->
+    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="styles.css">
     
 </head>
@@ -23,15 +30,30 @@
     <header class="header" id="header">
         <nav class="nav container">
             <a href="#" class="nav-logo">Anuj<span>.</span></a>
-            <ul class="nav-list" id="nav-list">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <i class="ph-bold ph-list"></i>
+            <div class="nav-list" id="nav-list">
+                <ul>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#projects" class="nav-link">Projects</a></li>
+                    <!-- <li><a href="#testimonials" class="nav-link">Testimonials</a></li> REMOVED -->
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <!-- Theme toggle button for desktop -->
+                <div class="theme-toggle" id="theme-toggle-desktop">
+                    <i class="ph-bold ph-moon"></i>
+                </div>
+            </div>
+            
+            <div class="nav-menu-right">
+                <!-- Theme toggle button for mobile (will be positioned) -->
+                <div class="theme-toggle" id="theme-toggle-mobile">
+                    <i class="ph-bold ph-moon"></i>
+                </div>
+                <!-- Mobile menu toggle -->
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="ph-bold ph-list"></i>
+                </div>
             </div>
         </nav>
     </header>
@@ -63,9 +85,6 @@
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">My journey and what drives me.</p>
                 <div class="about-content">
-                    <div class="about-image reveal">
-                        <img src="https://i.ibb.co/Jj3Sj5TC/IMG-20250503-213557.jpg" alt="Anuj Tiwari working">
-                    </div>
                     <div class="about-text reveal">
                         <h3>Crafting Digital Experiences</h3>
                         <p>
@@ -85,6 +104,7 @@
                 <h2 class="section-title">My Skills</h2>
                 <p class="section-subtitle">The technologies and tools I work with.</p>
                 <div class="skills-grid">
+                    <!-- Skills Cards... -->
                     <div class="skill-card reveal">
                         <i class="ph-bold ph-file-html"></i>
                         <h4>HTML5</h4>
@@ -141,16 +161,17 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
+        <!-- Projects Section - UPDATED -->
         <section id="projects">
             <div class="container">
                 <h2 class="section-title">My Projects</h2>
                 <p class="section-subtitle">A selection of my recent work.</p>
                 <div class="projects-grid">
-                    <!-- Updated Project -->
+                    
+                    <!-- Project 1: Vitae AI (UPDATED) -->
                     <div class="project-card reveal">
                         <div class="project-image">
-                            <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=AI+in+Healthcare" alt="Revolutionizing Healthcare with AI">
+                            <img src="https://i.ibb.co/zVDLbsCD/Screenshot-2025-10-22-095212.png" alt="Vitae AI Project Screenshot">
                         </div>
                         <div class="project-content">
                             <h3>Revolutionizing Healthcare with AI</h3>
@@ -159,39 +180,68 @@
                                 <a href="https://vitae-ai.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
                                 <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
                             </div>
+                            <a class="btn-read-more" 
+                               data-title="Revolutionizing Healthcare with AI"
+                               data-img="https://i.ibb.co/zVDLbsCD/Screenshot-2025-10-22-095212.png"
+                               data-problem="Healthcare professionals face challenges with time-consuming diagnostics and managing patient data efficiently. There's a need for smarter tools to assist in diagnostics and streamline operations."
+                               data-solution="VitaeAI is a web application that leverages cutting-edge AI to assist healthcare practices. It uses Google Gemini for intelligent insights and Google Cloud Vision for analyzing medical images. Firebase provides secure, real-time data storage, all wrapped in a fast, responsive interface built with Next.js and Tailwind CSS."
+                               data-tech="Google Gemini, Cloud Vision, Firebase, Next.js, Tailwind CSS, JavaScript, Bun.js, Node.js runtime.">
+                               Read More...
+                            </a>
                         </div>
                     </div>
-                    <!-- Placeholder Project 2 -->
+                    
+                    <!-- Project 2: BloomPost (UPDATED) -->
                     <div class="project-card reveal">
                         <div class="project-image">
-                             <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Project+Two" alt="Project Two">
+                             <img src="https://i.ibb.co/nNTbhpvP/Screenshot-2025-10-22-093052.png" alt="BloomPost project screenshot">
                         </div>
                         <div class="project-content">
-                            <h3>Task Management App</h3>
-                            <p>A sleek and intuitive task manager built with React and Firebase, allowing users to organize their daily tasks with ease.</p>
+                            <h3 class="project-title-italic">BloomPost</h3>
+                            <p>A platform where users can digitally create and send custom bouquets (in color or B&W) filled with real emotions.</p>
                              <div class="project-links">
-                                <a href="#" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://bloompost-site.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
                                 <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
                             </div>
+                             <a class="btn-read-more"
+                                data-title="BloomPost"
+                                data-img="https://i.ibb.co/nNTbhpvP/Screenshot-2025-10-22-093052.png"
+                                data-problem=""
+                                data-solution="This was a personal creative project. My goal was to use HTML, CSS, and JavaScript to build a unique platform where users could digitally design their own custom bouquets (in color or black & white), attach a personal message, and send it to someone with real emotion."
+                                data-tech="HTML5, CSS3, JavaScript (ES6+)">
+                               Read More...
+                            </a>
                         </div>
                     </div>
-                    <!-- Placeholder Project 3 -->
+                    
+                    <!-- Project 3: Personal Portfolio -->
                     <div class="project-card reveal">
                         <div class="project-image">
-                             <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Project+Three" alt="Project Three">
+                             <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Personal+Portfolio" alt="Personal Portfolio Project">
                         </div>
                         <div class="project-content">
                             <h3>Personal Portfolio</h3>
                             <p>The very website you are looking at! A fully responsive personal site designed to showcase my skills and projects.</p>
                              <div class="project-links">
-                                <a href="#" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="#home" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
                                 <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
                             </div>
+                             <a class="btn-read-more"
+                                data-title="Personal Portfolio"
+                                data-img="https://placehold.co/600x400/1F2937/FFFFFF?text=Personal+Portfolio"
+                                data-problem="The problem was needing a central, professional place to showcase my skills, projects, and experience to potential employers and collaborators."
+                                data-solution="I built a custom, fully responsive single-page application from scratch using HTML, CSS, and JavaScript. It features a clean design, smooth scroll animations, and a functional contact form."
+                                data-tech="HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+), Web3Forms API">
+                               Read More...
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        
+        <!-- REMOVED Testimonials Section -->
+        <!-- <section id="testimonials"> ... </section> -->
 
         <!-- Contact Section -->
         <section id="contact">
@@ -225,8 +275,24 @@
         </div>
     </footer>
     
-    <!-- CORRECT SCRIPT LINK FOR VERCEL -->
+    <!-- NEW Project Modal HTML -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content">
+            <i class="ph-bold ph-x modal-close" id="modal-close"></i>
+            <img src="" alt="Project Image" id="modal-img">
+            <h3 id="modal-title"></h3>
+            <h4>Problem</h4>
+            <p id="modal-problem"></p>
+            <h4>Solution</h4>
+            <p id="modal-solution"></p>
+            <h4>Technologies Used</h4>
+            <p id="modal-tech"></p>
+        </div>
+    </div>
+    
+    <!-- Link to your JavaScript file -->
     <script src="script.js"></script>
+
 </body>
 </html>
 
