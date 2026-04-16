@@ -1,14 +1,23 @@
 document.addEventListener('DOMContentLoaded', () => {
+    
     // 1. Navigation & Scroll Logic
+    const header = document.getElementById('header');
     const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        const header = document.getElementById('header');
-        header.classList.toggle('scrolled', window.scrollY > 50);
+    const sections = document.querySelectorAll('section');
 
-        const sections = document.querySelectorAll('section');
+    window.addEventListener('scroll', () => {
+        // Sticky Header effect
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+
+        // Active Link highlighting
         let current = "";
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
             if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute("id");
             }
@@ -22,23 +31,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 2. Theme Toggle Logic
+    // 2. Theme Toggle Logic (Light/Dark Mode)
     const themeBtn = document.getElementById('theme-toggle');
     const body = document.body;
     
     themeBtn.onclick = () => {
         body.classList.toggle('light-mode');
         const icon = themeBtn.querySelector('i');
-        icon.className = body.classList.contains('light-mode') ? 'ph-bold ph-sun' : 'ph-bold ph-moon';
-        localStorage.setItem('portfolio-theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+        // Change icon based on mode
+        if (body.classList.contains('light-mode')) {
+            icon.className = 'ph-bold ph-sun';
+            localStorage.setItem('portfolio-theme', 'light');
+        } else {
+            icon.className = 'ph-bold ph-moon';
+            localStorage.setItem('portfolio-theme', 'dark');
+        }
     };
 
-    if(localStorage.getItem('portfolio-theme') === 'light') {
+    // Load saved theme on startup
+    if (localStorage.getItem('portfolio-theme') === 'light') {
         body.classList.add('light-mode');
         themeBtn.querySelector('i').className = 'ph-bold ph-sun';
     }
 
-    // 3. Project Modal Data (Updated Content)
+    // 3. Project Modal Data (Professional Content)
     const projectData = {
         prism: { 
             title: "Prism AI – Unified Intelligence Platform", 
@@ -58,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         vitae: { 
             title: "Vitae AI — Intelligent Healthcare Analytics", 
-            body: "Enhances healthcare efficiency with AI-driven analytics, advanced image processing, and intelligent patient data management to assist medical professionals in providing better diagnostic accuracy." 
+            body: "<strong>Stack: AI Diagnostics, Image Processing</strong><br><br>Enhances healthcare efficiency with AI-driven analytics, advanced image processing, and intelligent patient data management to assist medical professionals in providing better diagnostic accuracy." 
         },
         bloom: { 
             title: "BloomPost – Digital Bouquet Builder", 
@@ -71,52 +87,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.getElementById('modal-close');
 
+    // Open Modal
     document.querySelectorAll('.btn-read-more').forEach(btn => {
         btn.addEventListener('click', () => {
             const id = btn.dataset.id;
             const data = projectData[id];
-            if(data) {
+            if (data) {
                 modalTitle.innerHTML = data.title;
                 modalBody.innerHTML = `<p>${data.body}</p>`;
                 modal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Stop scrolling when modal is open
             }
         });
     });
 
-    closeModalBtn.onclick = () => modal.classList.remove('active');
-    window.onclick = (e) => { if(e.target == modal) modal.classList.remove('active'); };
+    // Close Modal Logic
+    const closeModal = () => {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Resume scrolling
+    };
 
-    // 4. Working Contact Form (Web3Forms)
+    closeModalBtn.onclick = closeModal;
+    
+    // Close on clicking outside the content box
+    window.onclick = (e) => { 
+        if (e.target == modal) closeModal(); 
+    };
+
+    // 4. Contact Form Submission (Using Web3Forms)
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');
 
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        submitBtn.disabled = true;
-        formStatus.textContent = "Sending...";
-        formStatus.style.color = "var(--primary-color)";
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // UI Feedback
+            submitBtn.disabled = true;
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = "Sending...";
+            formStatus.textContent = "Processing your message...";
+            formStatus.style.color = "var(--primary-color)";
 
-        const formData = new FormData(contactForm);
-        try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-            const result = await response.json();
-            if (result.success) {
-                formStatus.textContent = "Success! Anuj will contact you soon.";
-                formStatus.style.color = "#4ade80";
-                contactForm.reset();
-            } else {
-                formStatus.textContent = "Error! Please try again.";
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+                
+                if (result.success) {
+                    formStatus.textContent = "Success! I'll get back to you soon.";
+                    formStatus.style.color = "#4ade80"; // Green for success
+                    contactForm.reset();
+                } else {
+                    formStatus.textContent = "Something went wrong. Please try again.";
+                    formStatus.style.color = "#f87171"; // Red for error
+                }
+            } catch (error) { 
+                formStatus.textContent = "Connection error. Please check your internet.";
                 formStatus.style.color = "#f87171";
+            } finally {
+                // Restore button state
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+                
+                // Clear message after 5 seconds
+                setTimeout(() => { 
+                    formStatus.textContent = ""; 
+                }, 5000);
             }
-        } catch { 
-            formStatus.textContent = "Connection Error!";
-            formStatus.style.color = "#f87171";
-        }
-        setTimeout(() => { formStatus.textContent = ""; }, 4000);
-        submitBtn.disabled = false;
-    });
+        });
+    }
 });
