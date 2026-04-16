@@ -9,7 +9,7 @@
     <meta name="description" content="Personal portfolio of Anuj Tiwari, a passionate web developer specializing in React, Node.js, and modern web technologies.">
     <meta name="keywords" content="Anuj Tiwari, Web Developer, Portfolio, React, Node.js, Next.js, JavaScript, TypeScript, MongoDB, Full-Stack Developer">
     
-    <!-- Favicon (Placeholder 'A') -->
+    <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22 fill=%22%2338BDF8%22>A</text></svg>">
     
     <!-- Google Fonts -->
@@ -20,40 +20,33 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- Link to your CSS file -->
-    <link rel="stylesheet" href="styles.css">
-    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
 
-    <!-- Header -->
+    <!-- Background Animated Blobs -->
+    <div class="bg-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header Section -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav-logo">Anuj<span>.</span></a>
+            <a href="#home" class="nav-logo">Anuj<span>.</span></a>
             <div class="nav-list" id="nav-list">
                 <ul>
                     <li><a href="#home" class="nav-link active">Home</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#skills" class="nav-link">Skills</a></li>
                     <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <!-- <li><a href="#testimonials" class="nav-link">Testimonials</a></li> REMOVED -->
                     <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
-                <!-- Theme toggle button for desktop -->
-                <div class="theme-toggle" id="theme-toggle-desktop">
-                    <i class="ph-bold ph-moon"></i>
-                </div>
             </div>
-            
             <div class="nav-menu-right">
-                <!-- Theme toggle button for mobile (will be positioned) -->
-                <div class="theme-toggle" id="theme-toggle-mobile">
-                    <i class="ph-bold ph-moon"></i>
-                </div>
-                <!-- Mobile menu toggle -->
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="ph-bold ph-list"></i>
-                </div>
+                <div class="theme-toggle" id="theme-toggle"><i class="ph-bold ph-moon"></i></div>
             </div>
         </nav>
     </header>
@@ -62,38 +55,36 @@
         <!-- Hero Section -->
         <section id="home">
             <div class="container hero-content">
-                <div class="hero-text reveal">
+                <div class="hero-text">
                     <h1>Hi, I'm <span>Anuj Tiwari</span></h1>
                     <h2 class="subtitle">A Passionate Web Developer</h2>
                     <p>I specialize in creating stunning, responsive, and user-friendly websites and applications. Let's build something amazing together.</p>
                     <div class="social-links">
                         <a href="https://github.com/anuj1iwari" target="_blank"><i class="ph-bold ph-github-logo"></i></a>
-                        <a href="https://www.linkedin.com/in/anuj-tiwari-6647a4273?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank"><i class="ph-bold ph-linkedin-logo"></i></a>
-                        <a href="https://www.instagram.com/anuj1iwari?igsh=MWttdmlvaTY5N2NseQ==" target="_blank"><i class="ph-bold ph-instagram-logo"></i></a>
+                        <a href="https://www.linkedin.com/in/anuj-tiwari-6647a4273" target="_blank"><i class="ph-bold ph-linkedin-logo"></i></a>
+                        <a href="https://www.instagram.com/anuj1iwari" target="_blank"><i class="ph-bold ph-instagram-logo"></i></a>
                     </div>
-                    <a href="https://drive.google.com/file/d/1rKsQosCTo8zkZ4rbZdgSfFGDDG4GqBA_/view?usp=drivesdk" class="btn" target="_blank">Download CV</a>
+                    <a href="https://drive.google.com/file/d/1_QeoQIWsRY1roP3vNUy_8cP2ZJzktkPd/view?usp=sharing" target="_blank" class="btn">Download CV</a>
                 </div>
-                <div class="hero-image-container reveal">
+                <div class="hero-image-container">
                     <img src="https://i.ibb.co/jkLsH9W3/Anuj-Image.jpg" alt="Anuj Tiwari" class="hero-image">
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- About Me Section -->
         <section id="about">
             <div class="container">
                 <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">My journey and what drives me.</p>
-                <div class="about-content">
-                    <div class="about-text reveal">
-                        <h3>Crafting Digital Experiences</h3>
-                        <p>
-                            Hello! I'm Anuj, a web developer with a deep passion for technology and design. My journey into web development started from a simple curiosity about how websites work, which quickly evolved into a full-fledged dedication to building seamless and engaging digital products.
-                        </p>
-                        <p>
-                            I thrive on solving complex problems and continuously learning new technologies. My goal is to not only write clean and efficient code but also to create intuitive and aesthetically pleasing interfaces that provide real value to users. When I'm not coding, I enjoy exploring new tech trends and contributing to open-source projects.
-                        </p>
-                    </div>
+                <p class="section-subtitle">Beyond the syntax and semicolons.</p>
+                <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; font-weight: 600;">Building Solutions, One Story at a Time</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8;">
+                        I’ve always believed that great code is more than just logic, it’s about the narrative we create for the user. I am a <strong>Storyteller by heart</strong>, and I bring that perspective to every line of code I write. Whether I'm building an AI-powered brain like <strong>Prism AI</strong> or a peaceful corner of the internet like <strong>ZenSpace</strong>, I focus on the experience, the emotion, and the problem being solved.
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                        My journey into web development was driven by a simple curiosity: <i>"How can I make the digital world feel more human?"</i> Today, I use the MERN stack and Next.js to turn that curiosity into reality. From healthcare innovation with <strong>Vitae AI</strong> to the curated vibes of <strong>Lofi Focus Room</strong>, I love taking abstract ideas and sculpting them into scalable, beautiful digital realities.
+                    </p>
                 </div>
             </div>
         </section>
@@ -102,167 +93,131 @@
         <section id="skills">
             <div class="container">
                 <h2 class="section-title">My Skills</h2>
-                <p class="section-subtitle">The technologies and tools I work with.</p>
                 <div class="skills-grid">
-                    <!-- Skills Cards... -->
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-html"></i>
-                        <h4>HTML5</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-css"></i>
-                        <h4>CSS3</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-wind"></i>
-                        <h4>TailwindCSS</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-js"></i>
-                        <h4>JavaScript</h4>
-                    </div>
-                     <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-ts"></i>
-                        <h4>TypeScript</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-react-logo"></i>
-                        <h4>React</h4>
-                    </div>
-                     <div class="skill-card reveal">
-                        <i class="ph-bold ph-rocket-launch"></i>
-                        <h4>Next.js</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-nodejs-logo"></i>
-                        <h4>Node.js</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-database"></i>
-                        <h4>MongoDB</h4>
-                    </div>
-                     <div class="skill-card reveal">
-                        <i class="ph-bold ph-database"></i>
-                        <h4>MySQL</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-c"></i>
-                        <h4>C</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-file-cpp"></i>
-                        <h4>C++</h4>
-                    </div>
-                    <div class="skill-card reveal">
-                        <i class="ph-bold ph-git-branch"></i>
-                        <h4>Git & GitHub</h4>
-                    </div>
+                    <div class="skill-card" data-color="html"><i class="ph-bold ph-file-html"></i><h4>HTML5</h4></div>
+                    <div class="skill-card" data-color="css"><i class="ph-bold ph-file-css"></i><h4>CSS3</h4></div>
+                    <div class="skill-card" data-color="tailwind"><i class="ph-bold ph-wind"></i><h4>Tailwind</h4></div>
+                    <div class="skill-card" data-color="js"><i class="ph-bold ph-file-js"></i><h4>JavaScript</h4></div>
+                    <div class="skill-card" data-color="ts"><i class="ph-bold ph-file-ts"></i><h4>TypeScript</h4></div>
+                    <div class="skill-card" data-color="java"><i class="ph-bold ph-coffee"></i><h4>Java</h4></div>
+                    <div class="skill-card" data-color="python"><i class="ph-bold ph-code-simple"></i><h4>Python</h4></div>
+                    <div class="skill-card" data-color="c"><i class="ph-bold ph-file-c"></i><h4>C</h4></div>
+                    <div class="skill-card" data-color="cpp"><i class="ph-bold ph-file-cpp"></i><h4>C++</h4></div>
+                    <div class="skill-card" data-color="react"><i class="ph-bold ph-react-logo"></i><h4>React</h4></div>
+                    <div class="skill-card" data-color="next"><i class="ph-bold ph-rocket-launch"></i><h4>Next.js</h4></div>
+                    <div class="skill-card" data-color="vite"><i class="ph-bold ph-lightning"></i><h4>Vite</h4></div>
+                    <div class="skill-card" data-color="spring"><i class="ph-bold ph-leaf"></i><h4>Spring</h4></div>
+                    <div class="skill-card" data-color="node"><i class="ph-bold ph-nodejs-logo"></i><h4>Node.js</h4></div>
+                    <div class="skill-card" data-color="mongo"><i class="ph-bold ph-database"></i><h4>MongoDB</h4></div>
+                    <div class="skill-card" data-color="mysql"><i class="ph-bold ph-database"></i><h4>MySQL</h4></div>
+                    <div class="skill-card" data-color="firebase"><i class="ph-bold ph-fire"></i><h4>Firebase</h4></div>
+                    <div class="skill-card" data-color="gcloud"><i class="ph-bold ph-google-logo"></i><h4>Google Cloud</h4></div>
+                    <div class="skill-card" data-color="aws"><i class="ph-bold ph-cloud"></i><h4>AWS</h4></div>
+                    <div class="skill-card" data-color="vercel"><i class="ph-bold ph-rocket"></i><h4>Vercel</h4></div>
+                    <div class="skill-card" data-color="git"><i class="ph-bold ph-git-branch"></i><h4>Git & GitHub</h4></div>
+                    <div class="skill-card" data-color="figma"><i class="ph-bold ph-figma-logo"></i><h4>Figma</h4></div>
+                    <div class="skill-card" data-color="canva"><i class="ph-bold ph-palette"></i><h4>Canva</h4></div>
+                    <div class="skill-card" data-color="photoshop"><i class="ph-bold ph-image"></i><h4>Photoshop</h4></div>
+                    <div class="skill-card" data-color="blender"><i class="ph-bold ph-cube"></i><h4>Blender</h4></div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section - UPDATED -->
+        <!-- Projects Section -->
         <section id="projects">
             <div class="container">
                 <h2 class="section-title">My Projects</h2>
-                <p class="section-subtitle">A selection of my recent work.</p>
                 <div class="projects-grid">
-                    
-                    <!-- Project 1: Vitae AI (UPDATED) -->
-                    <div class="project-card reveal">
-                        <div class="project-image">
-                            <img src="https://i.ibb.co/zVDLbsCD/Screenshot-2025-10-22-095212.png" alt="Vitae AI Project Screenshot">
-                        </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/VW5D11Zv/Screenshot-2026-04-16-140316.png" alt="Prism AI"></div>
                         <div class="project-content">
-                            <h3>Revolutionizing Healthcare with AI</h3>
-                            <p>Empower your healthcare practice with cutting-edge AI technology for improved diagnostics, patient care, and operational efficiency.</p>
+                            <h3>Prism AI</h3>
+                            <p>An intelligent AI-powered platform designed for seamless interactions and advanced data processing.</p>
+                            <div class="project-links">
+                                <a href="https://prismai-three.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/anuj1iwari/prismai-apk" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                            </div>
+                            <span class="btn-read-more" data-id="prism">Read More...</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/NgGmPf0M/Screenshot-2026-04-16-140113.png" alt="The Empathy Archive"></div>
+                        <div class="project-content">
+                            <h3>The Empathy Archive</h3>
+                            <p>A digital space for sharing human stories, fostering connection and understanding through empathy.</p>
+                            <div class="project-links">
+                                <a href="https://the-empathy-archive.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/anuj1iwari/The-Empathy-Archive" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                            </div>
+                            <span class="btn-read-more" data-id="empathy">Read More...</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/TBG2Qj5k/Screenshot-2026-04-16-140151.png" alt="ZenSpace"></div>
+                        <div class="project-content">
+                            <h3>ZenSpace</h3>
+                            <p>A mindfulness and meditation app to help users find their calm in the digital chaos.</p>
+                            <div class="project-links">
+                                <a href="https://zenspace-chi.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/anuj1iwari/ZenSpace" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                            </div>
+                            <span class="btn-read-more" data-id="zen">Read More...</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/DfSLQhWX/Screenshot-2026-04-16-140219.png" alt="Lofi Focus Room"></div>
+                        <div class="project-content">
+                            <h3>Lofi Focus Room</h3>
+                            <p>Boost your productivity with a personalized lofi music environment and focus timer.</p>
+                            <div class="project-links">
+                                <a href="https://lofi-focus-room.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/anuj1iwari/Lofi-Focus-Room" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                            </div>
+                            <span class="btn-read-more" data-id="lofi">Read More...</span>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/zVDLbsCD/Screenshot-2025-10-22-095212.png" alt="Vitae AI"></div>
+                        <div class="project-content">
+                            <h3>Vitae AI</h3>
+                            <p>Revolutionizing healthcare practices with AI diagnostics and operational efficiency.</p>
                             <div class="project-links">
                                 <a href="https://vitae-ai.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
-                                <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                                <a href="#">GitHub <i class="ph-bold ph-github-logo"></i></a>
                             </div>
-                            <a class="btn-read-more" 
-                               data-title="Revolutionizing Healthcare with AI"
-                               data-img="https://i.ibb.co/zVDLbsCD/Screenshot-2025-10-22-095212.png"
-                               data-problem="Healthcare professionals face challenges with time-consuming diagnostics and managing patient data efficiently. There's a need for smarter tools to assist in diagnostics and streamline operations."
-                               data-solution="VitaeAI is a web application that leverages cutting-edge AI to assist healthcare practices. It uses Google Gemini for intelligent insights and Google Cloud Vision for analyzing medical images. Firebase provides secure, real-time data storage, all wrapped in a fast, responsive interface built with Next.js and Tailwind CSS."
-                               data-tech="Google Gemini, Cloud Vision, Firebase, Next.js, Tailwind CSS, JavaScript, Bun.js, Node.js runtime.">
-                               Read More...
-                            </a>
+                            <span class="btn-read-more" data-id="vitae">Read More...</span>
                         </div>
                     </div>
-                    
-                    <!-- Project 2: BloomPost (UPDATED) -->
-                    <div class="project-card reveal">
-                        <div class="project-image">
-                             <img src="https://i.ibb.co/nNTbhpvP/Screenshot-2025-10-22-093052.png" alt="BloomPost project screenshot">
-                        </div>
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/nNTbhpvP/Screenshot-2025-10-22-093052.png" alt="BloomPost"></div>
                         <div class="project-content">
-                            <h3 class="project-title-italic">BloomPost</h3>
-                            <p>A platform where users can digitally create and send custom bouquets (in color or B&W) filled with real emotions.</p>
-                             <div class="project-links">
+                            <h3>BloomPost</h3>
+                            <p>A unique platform to digitally create and send custom bouquets with personal emotional messages.</p>
+                            <div class="project-links">
                                 <a href="https://bloompost-site.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
-                                <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                                <a href="#">GitHub <i class="ph-bold ph-github-logo"></i></a>
                             </div>
-                             <a class="btn-read-more"
-                                data-title="BloomPost"
-                                data-img="https://i.ibb.co/nNTbhpvP/Screenshot-2025-10-22-093052.png"
-                                data-problem=""
-                                data-solution="This was a personal creative project. My goal was to use HTML, CSS, and JavaScript to build a unique platform where users could digitally design their own custom bouquets (in color or black & white), attach a personal message, and send it to someone with real emotion."
-                                data-tech="HTML5, CSS3, JavaScript (ES6+)">
-                               Read More...
-                            </a>
-                        </div>
-                    </div>
-                    
-                    <!-- Project 3: Personal Portfolio -->
-                    <div class="project-card reveal">
-                        <div class="project-image">
-                             <img src="https://placehold.co/600x400/1F2937/FFFFFF?text=Personal+Portfolio" alt="Personal Portfolio Project">
-                        </div>
-                        <div class="project-content">
-                            <h3>Personal Portfolio</h3>
-                            <p>The very website you are looking at! A fully responsive personal site designed to showcase my skills and projects.</p>
-                             <div class="project-links">
-                                <a href="#home" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
-                                <a href="#" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
-                            </div>
-                             <a class="btn-read-more"
-                                data-title="Personal Portfolio"
-                                data-img="https://placehold.co/600x400/1F2937/FFFFFF?text=Personal+Portfolio"
-                                data-problem="The problem was needing a central, professional place to showcase my skills, projects, and experience to potential employers and collaborators."
-                                data-solution="I built a custom, fully responsive single-page application from scratch using HTML, CSS, and JavaScript. It features a clean design, smooth scroll animations, and a functional contact form."
-                                data-tech="HTML5, CSS3 (Flexbox/Grid), JavaScript (ES6+), Web3Forms API">
-                               Read More...
-                            </a>
+                            <span class="btn-read-more" data-id="bloom">Read More...</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- REMOVED Testimonials Section -->
-        <!-- <section id="testimonials"> ... </section> -->
 
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Have a question or want to work together? Let's connect.</p>
-                <div class="contact-form-container reveal">
+                <p class="section-subtitle">Let's connect and build your next story together.</p>
+                <div class="contact-form-container">
                     <form id="contact-form">
                         <input type="hidden" name="access_key" value="6db8b0c-bc50-4e99-8e55-8ad40fe1e298">
-                        <div class="form-group">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn submit-btn">Send Message</button>
+                        <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
+                        <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
+                        <div class="form-group"><textarea name="message" placeholder="Your Message" rows="6" required></textarea></div>
+                        <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
                     </form>
-                    <div id="form-status" style="margin-top: 1rem; text-align: center;"></div>
+                    <div id="form-status"></div>
                 </div>
             </div>
         </section>
@@ -271,28 +226,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Anuj Tiwari. All Rights Reserved.</p>
+            <p>&copy; 2024 Anuj Tiwari. Built with Passion & Caffeine. All Rights Reserved.</p>
         </div>
     </footer>
-    
-    <!-- NEW Project Modal HTML -->
+
+    <!-- Project Modal -->
     <div class="modal-overlay" id="project-modal">
         <div class="modal-content">
             <i class="ph-bold ph-x modal-close" id="modal-close"></i>
-            <img src="" alt="Project Image" id="modal-img">
-            <h3 id="modal-title"></h3>
-            <h4>Problem</h4>
-            <p id="modal-problem"></p>
-            <h4>Solution</h4>
-            <p id="modal-solution"></p>
-            <h4>Technologies Used</h4>
-            <p id="modal-tech"></p>
+            <h3 id="modal-title" style="color: var(--primary-color); margin-bottom: 1.5rem;">Project Details</h3>
+            <div id="modal-body" style="font-size: 0.95rem; line-height: 1.8;"></div>
         </div>
     </div>
-    
-    <!-- Link to your JavaScript file -->
-    <script src="script.js"></script>
 
+    <!-- External Script -->
+    <script src="script.js"></script>
 </body>
 </html>
-
