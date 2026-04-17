@@ -20,7 +20,7 @@
     <!-- Phosphor Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     
-    <!-- External CSS Linking -->
+    <!-- Linking External CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body id="body">
@@ -78,11 +78,11 @@
                 <h2 class="section-title">About Me</h2>
                 <p class="section-subtitle">Beyond the syntax and semicolons.</p>
                 <div style="max-width: 900px; margin: 0 auto; text-align: center;">
-                    <h3 style="margin-bottom: 1.5rem; font-size: 1.8rem; font-weight: 600;">Building Solutions, One Story at a Time</h3>
-                    <p style="margin-bottom: 1.5rem; font-size: 1.05rem; line-height: 1.8;">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; font-size: 1.8rem; font-weight: 600;">Building Solutions, One Story at a Time</h3>
+                    <p style="margin-bottom: 1.5rem; color: var(--text-color-darker); font-size: 1.05rem; line-height: 1.8;">
                         I’ve always believed that great code is more than just logic, it’s about the narrative we create for the user. I am a <strong>Storyteller by heart</strong>, and I bring that perspective to every line of code I write. Whether I'm building an AI-powered brain like <strong>Prism AI</strong> or a peaceful corner of the internet like <strong>ZenSpace</strong>, I focus on the experience, the emotion, and the problem being solved.
                     </p>
-                    <p style="font-size: 1.05rem; line-height: 1.8;">
+                    <p style="color: var(--text-color-darker); font-size: 1.05rem; line-height: 1.8;">
                         My journey into web development was driven by a simple curiosity: <i>"How can I make the digital world feel more human?"</i> Today, I use the MERN stack and Next.js to turn that curiosity into reality. From healthcare innovation with <strong>Vitae AI</strong> to the curated vibes of <strong>Lofi Focus Room</strong>, I love taking abstract ideas and sculpting them into scalable, beautiful digital realities.
                     </p>
                 </div>
@@ -127,8 +127,19 @@
         <section id="projects">
             <div class="container">
                 <h2 class="section-title">My Projects</h2>
-                <p class="section-subtitle">A full gallery of my recent digital products.</p>
                 <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image"><img src="https://i.ibb.co/PZxBWgW6/Screenshot-2026-04-17-122455.png" alt="AsciiByHeart"></div>
+                        <div class="project-content">
+                            <h3>AsciiByHeart</h3>
+                            <p>Futuristic real-time camera-to-ASCII converter with AI scene analysis and cyberpunk aesthetics.</p>
+                            <div class="project-links">
+                                <a href="https://ascii-by-heart.vercel.app/" target="_blank">Live Demo <i class="ph-bold ph-arrow-up-right"></i></a>
+                                <a href="https://github.com/anuj1iwari/Ascii" target="_blank">GitHub <i class="ph-bold ph-github-logo"></i></a>
+                            </div>
+                            <span class="btn-read-more" data-id="ascii">Read More...</span>
+                        </div>
+                    </div>
                     <div class="project-card">
                         <div class="project-image"><img src="https://i.ibb.co/VW5D11Zv/Screenshot-2026-04-16-140316.png" alt="Prism AI"></div>
                         <div class="project-content">
@@ -209,6 +220,7 @@
         <section id="contact">
             <div class="container">
                 <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Let's connect and build your next story together.</p>
                 <div class="contact-form-container">
                     <form id="contact-form">
                         <input type="hidden" name="access_key" value="6db8b0c-bc50-4e99-8e55-8ad40fe1e298">
@@ -217,13 +229,12 @@
                         <div class="form-group"><textarea name="message" placeholder="Your Message" rows="6" required></textarea></div>
                         <button type="submit" class="submit-btn" id="submit-btn">Send Message</button>
                     </form>
-                    <div id="form-status"></div>
+                    <div id="form-status" style="text-align:center; margin-top:1rem;"></div>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 Anuj Tiwari. Built with Passion & Caffeine. All Rights Reserved.</p>
@@ -239,7 +250,7 @@
         </div>
     </div>
 
-    <!-- External JS Linking -->
+    <!-- Linking External JS -->
     <script src="script.js"></script>
 </body>
 </html>
