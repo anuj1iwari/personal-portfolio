@@ -13,11 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
 
-        // Active Link highlighting
+        // Active Link highlighting while scrolling
         let current = "";
         sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
             if (pageYOffset >= sectionTop - 200) {
                 current = section.getAttribute("id");
             }
@@ -38,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     themeBtn.onclick = () => {
         body.classList.toggle('light-mode');
         const icon = themeBtn.querySelector('i');
-        // Change icon based on mode
+        
         if (body.classList.contains('light-mode')) {
             icon.className = 'ph-bold ph-sun';
             localStorage.setItem('portfolio-theme', 'light');
@@ -48,14 +47,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Load saved theme on startup
+    // Load saved theme on startup from localStorage
     if (localStorage.getItem('portfolio-theme') === 'light') {
         body.classList.add('light-mode');
         themeBtn.querySelector('i').className = 'ph-bold ph-sun';
     }
 
-    // 3. Project Modal Data (Professional Content)
+    // 3. Project Modal Data (Updated with 7 Projects)
     const projectData = {
+        ascii: {
+            title: "AsciiByHeart – Cyberpunk Vision & Neural Analysis",
+            body: "<strong>Stack: React 19, TypeScript, Gemini AI, Web Audio API</strong><br><br>• High-performance live camera-to-ASCII conversion with temporal smoothing for reduced jitter.<br>• Neural Analysis engine powered by Gemini 1.5 Flash for real-time subject assessment and tactical threat detection.<br>• Procedurally generated sci-fi soundscape and tactile UI feedback using custom Web Audio API oscillators.<br>• Tactical HUD interface allowing real-time gain, contrast, and font adjustments for cinematic visual output."
+        },
         prism: { 
             title: "Prism AI – Unified Intelligence Platform", 
             body: "<strong>Stack: React.js, TS, Framer Motion</strong><br><br>• Architected a high-concurrency 7-Model AI Aggregator integrating Gemini 2.5 Pro and Claude APIs.<br>• Pioneered an ’AI Jury’ system for real-time model cross-evaluation and contradiction flagging.<br>• Enhanced user retention by visualizing complex AI reasoning paths and adaptive memory profiles." 
@@ -87,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const closeModalBtn = document.getElementById('modal-close');
 
-    // Open Modal
+    // Open Modal Logic
     document.querySelectorAll('.btn-read-more').forEach(btn => {
         btn.addEventListener('click', () => {
             const id = btn.dataset.id;
@@ -96,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 modalTitle.innerHTML = data.title;
                 modalBody.innerHTML = `<p>${data.body}</p>`;
                 modal.classList.add('active');
-                document.body.style.overflow = 'hidden'; // Stop scrolling when modal is open
+                document.body.style.overflow = 'hidden'; // Stop body scrolling
             }
         });
     });
@@ -104,17 +107,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close Modal Logic
     const closeModal = () => {
         modal.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Resume scrolling
+        document.body.style.overflow = 'auto'; // Resume body scrolling
     };
 
-    closeModalBtn.onclick = closeModal;
+    if (closeModalBtn) {
+        closeModalBtn.onclick = closeModal;
+    }
     
-    // Close on clicking outside the content box
+    // Close on clicking the backdrop/overlay
     window.onclick = (e) => { 
         if (e.target == modal) closeModal(); 
     };
 
-    // 4. Contact Form Submission (Using Web3Forms)
+    // 4. Contact Form Submission (Web3Forms API)
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
     const submitBtn = document.getElementById('submit-btn');
@@ -123,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // UI Feedback
+            // Visual feedback during submission
             submitBtn.disabled = true;
             const originalBtnText = submitBtn.textContent;
             submitBtn.textContent = "Sending...";
@@ -140,12 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
                 
                 if (result.success) {
-                    formStatus.textContent = "Success! I'll get back to you soon.";
-                    formStatus.style.color = "#4ade80"; // Green for success
+                    formStatus.textContent = "Success! Anuj will contact you soon.";
+                    formStatus.style.color = "#4ade80"; // Success Green
                     contactForm.reset();
                 } else {
                     formStatus.textContent = "Something went wrong. Please try again.";
-                    formStatus.style.color = "#f87171"; // Red for error
+                    formStatus.style.color = "#f87171"; // Error Red
                 }
             } catch (error) { 
                 formStatus.textContent = "Connection error. Please check your internet.";
@@ -155,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.disabled = false;
                 submitBtn.textContent = originalBtnText;
                 
-                // Clear message after 5 seconds
+                // Clear the status message after 5 seconds
                 setTimeout(() => { 
                     formStatus.textContent = ""; 
                 }, 5000);
